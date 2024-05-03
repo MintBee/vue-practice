@@ -18,7 +18,9 @@ const pageNumber = ref(props.initialPageNumber)
 const issues: Ref<IssueListRow[] | null> = ref(null)
 const totalIssueCount = await props.issueLoader.loadIssueCounts()
 
-const maxPageCount = computed(() => {return Math.floor(totalIssueCount / pageSize.value)+1})
+const maxPageCount = computed(() => {
+  return Math.floor(totalIssueCount / pageSize.value) + 1
+})
 
 watch(pageNumber, async () => {
   issues.value = null
@@ -43,7 +45,8 @@ watch(pageNumber, async () => {
       flat
       color="grey"
       active-color="primary"
-      max-pages="7" />
+      max-pages="7"
+      class="m-2 pb-3" />
   </div>
 </template>
 

@@ -7,9 +7,9 @@ const issueLoader = ref(new TestIssueLoader(10000));
 </script>
 
 <template>
-  <main>
+  <q-page>
     <Suspense>
       <IssueList :issue-loader="issueLoader"></IssueList>
     </Suspense>
-  </main>
+  </q-page>
 </template>
